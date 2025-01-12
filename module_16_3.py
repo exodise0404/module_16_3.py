@@ -7,7 +7,7 @@ app = FastAPI()
 users = {'1': 'Имя: Example, возраст: 18'}
 
 @app.get('/users')
-async def get_users(users: Annotated[int, Path(ge=1, le=100, description='Example', example='1')]):
+async def get_users() -> dict:
     return users
 
 @app.post("/user/{username}/{age}")
